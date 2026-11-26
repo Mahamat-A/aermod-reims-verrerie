@@ -2,6 +2,8 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24559575.svg)](https://doi.org/10.5281/zenodo.24559575)
 
+*[English version: README.en.md](README.en.md) — rapport en anglais : `rapport/aermod_reims_report_en.pdf`*
+
 Étude indépendante de la dispersion atmosphérique, fondée sur des données publiques et des hypothèses documentées.
 Ce n'est **pas une expertise réglementaire** : les résultats sont indicatifs et n'ont été ni vérifiés ni validés par
 l'exploitant ou par l'administration.
