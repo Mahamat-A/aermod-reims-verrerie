@@ -1,8 +1,8 @@
 # Dispersion des NOx de la verrerie O-I de Reims (2024) avec AERMOD
 
-Exercice personnel de modélisation de la dispersion atmosphérique. Il s'agit d'un travail d'apprentissage, et **pas
-d'une expertise réglementaire** : les résultats sont indicatifs. Ils reposent sur des données publiques et des
-hypothèses documentées, et n'ont été ni vérifiés ni validés par l'exploitant ou par l'administration.
+Étude indépendante de la dispersion atmosphérique, fondée sur des données publiques et des hypothèses documentées.
+Ce n'est **pas une expertise réglementaire** : les résultats sont indicatifs et n'ont été ni vérifiés ni validés par
+l'exploitant ou par l'administration.
 
 **Question.** Quelle part du NO₂ mesuré aux stations de Reims provient de la verrerie O-I France, plus gros émetteur
 de NOx de l'agglomération (143 t en 2024, IREP) ? Le réseau de mesure permet-il de la mettre en évidence ?

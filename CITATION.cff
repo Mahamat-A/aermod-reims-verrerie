@@ -17,6 +17,6 @@ keywords:
   - MMIF
   - Reims
 abstract: >-
-  Exercice personnel de modélisation de la dispersion des NOx émis par la verrerie O-I de Reims en 2024
-  avec AERMOD (météo observée et simulée par WRF à 1 km), comparé aux mesures des stations ATMO Grand Est.
-  Travail d'apprentissage, pas une expertise réglementaire.
+  Étude indépendante de la dispersion des NOx émis par la verrerie O-I de Reims en 2024 avec AERMOD
+  (météo observée et simulée par WRF à 1 km), comparée aux mesures des stations ATMO Grand Est.
+  Données publiques ; pas une expertise réglementaire.
