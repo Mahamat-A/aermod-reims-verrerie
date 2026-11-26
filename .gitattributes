@@ -1,5 +1,5 @@
 # Fichiers de données des modèles (et non du code) : exclus des statistiques de langages de GitHub
-*.plt linguist-generated=true linguist-language=Text
+*.plt linguist-generated=true linguist-detectable=false
 *.pst linguist-generated=true
 *.sfc linguist-generated=true
 *.SFC linguist-generated=true
