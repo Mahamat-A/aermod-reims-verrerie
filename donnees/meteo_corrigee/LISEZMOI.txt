@@ -1,0 +1,26 @@
+Corrections appliquées au fichier NOAA ISD de Reims-Prunay 2024 (070720-99999-2024)
+
+1. 070720-99999-2024_cavok   (scripts/corrige_cavok.py)
+   Les SYNOP de Prunay ne donnent la nébulosité totale que pour 6 à 8 octas.
+   Dans 7 030 METAR CAVOK / NSC / NCD sans couche, ajout d'un groupe GA1 à 0 octa
+   (GA1001+999999999), compteur de longueur +16.
+   Vérification indépendante : ensoleillement Météo-France de 10 à 14 h UTC
+   = 52,5 min/h pour ces heures (8 octas : 4,7 min/h).
+
+2. 070720-99999-2024_complet (scripts/complete_trous_mf.py)
+   381 heures absentes de la NOAA (dont 28-31/03 et 18-20/11/2024), ajoutées
+   comme lignes FM-12 à partir de la base horaire Météo-France (poste 51449002) :
+   vent, T, Td, pression mer, pression station, nébulosité N si présente.
+   Contrôle : températures identiques (écart max 0,0 °C) sur les 8 373 heures communes.
+   Lignes reconnaissables par « REMSYNMF ».
+
+Résultat AERMET étape 1 : 8 784 h ; vent et T 100 % ; nébulosité 97,5–99,5 % par trimestre.
+
+3. Radiosondages (aermet/aermet1.inp, aermet2.inp)
+   Trappes (00007145) en station principale ; 51 matins sans sondage en 2024.
+   Idar-Oberstein (00010618, IGRA GMM00010618) en station de secours : DATA2 + METHOD UPP_SUB SUBUA_SEC1
+   (sondage du même jour à Idar préféré au sondage de la veille à Trappes) → 60 substitutions.
+   Uccle écarté : absent d'IGRA de 2022 à 2025. Beauvechain : 44/51 jours seulement.
+
+Résultat AERMET étape 2 (prunay_2024.sfc / .pfl) : heures utilisables par AERMOD
+T1 100 %, T2 99,4 %, T3 98,0 %, T4 99,2 % (seuil réglementaire 90 %).

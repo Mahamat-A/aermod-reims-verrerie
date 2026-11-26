@@ -1,0 +1,47 @@
+** AERMET étape 2, variante : nébulosité de jour déduite du rayonnement mesuré (Météo-France GLO, inversion de Kasten-Czeplak)
+** Paramètres du sol : tables 3-1 à 3-5 du guide AERMET (cf. donnees/meteo_corrigee/LISEZMOI.txt)
+
+JOB
+   MESSAGES  rayonnement/aermet.msg
+   REPORT    rayonnement/aermet.rpt
+
+UPPERAIR
+   QAOUT     trappes_2024.oqa
+   QAOUT2    idar_2024.oqa
+
+SURFACE
+   QAOUT     rayonnement/prunay_2024_ray.oqa
+
+METPREP
+   XDATES    2024/01/01 TO 2024/12/31
+   LOCATION  07072  49.217N  4.150E  -1
+
+** Vent NWS arrondi à 10° : direction aléatorisée ; pas de mât sur site
+   METHOD    WIND_DIR  RANDOM
+   METHOD    REFLEVEL  SUBNWS
+** Correction de u* par vent faible et stable (option réglementaire)
+   METHOD    STABLEBL  ADJ_U*
+** Europe : sondage le plus proche du lever du soleil ; l'hiver, 00 h UTC = 01 h LST,
+** soit ~8 h avant le lever (08 h LST) : fenêtre élargie à -8 h
+   METHOD    UASELECT  SUNRISE
+   UAWINDOW  -8  2
+** Matin sans sondage à Trappes : sondage du même jour à Idar-Oberstein (secours),
+** préféré au sondage de la veille à Trappes
+   METHOD    UPP_SUB   SUBUA_SEC1
+
+   NWS_HGT   WIND  10.0
+
+   OUTPUT    rayonnement/prunay_2024_ray.sfc
+   PROFILE   rayonnement/prunay_2024_ray.pfl
+
+** 1 secteur (terrain homogène : aérodrome en herbe + grandes cultures)
+** Saisons : 1 = hiver (DJF), 2 = printemps (MAM), 3 = été (JJA), 4 = automne (SON)
+** Moyenne 50 % cultures / 50 % herbe ; Bowen « humide » (2024 = année la plus
+** pluvieuse de 2013-2024 à Prunay) ; hiver sans neige durable = valeurs d'automne
+   FREQ_SECT  SEASONAL  1
+   SECTOR     1  0  360
+**                        albédo  Bowen  z0 (m)
+   SITE_CHAR  1  1          0.19   0.45   0.03
+   SITE_CHAR  2  1          0.16   0.25   0.04
+   SITE_CHAR  3  1          0.19   0.35   0.15
+   SITE_CHAR  4  1          0.19   0.45   0.03

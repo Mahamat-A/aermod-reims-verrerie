@@ -1,0 +1,123 @@
+** AERMAP - VERSION 24142                                              11/22/26
+**                                                                     03:50:11
+
+** AERMAP : relief des récepteurs et de la source, verrerie O-I Reims
+** Coordonnées UTM 31N (WGS 84) ; NADA 0 = pas de conversion de datum (hors Amérique du Nord)
+CO STARTING
+   TITLEONE  O-I Reims - recepteurs 20 x 20 km et stations ATMO
+   DATATYPE  NED
+   DATAFILE  ../donnees/relief/mnt_ign_25m_utm31n.tif  TIFFDEBUG
+   TERRHGTS  EXTRACT
+** Domaine = MNT (30 x 30 km) moins une marge de 400 m
+   DOMAINXY  561999  5439244  31  591202  5468446  31
+   ANCHORXY  576601.2  5453845.2  576601.2  5453845.2  31  0
+   RUNORNOT  RUN
+CO FINISHED
+
+SO STARTING
+** Cheminée A (cas de référence) et B (test de sensibilité)
+   LOCATION  CHEM1  POINT  576601.2  5453845.2
+   LOCATION  CHEM1B POINT  576566.2  5453873.1
+SO FINISHED
+
+RE STARTING
+** Grille cartésienne 20 x 20 km centrée sur la cheminée A, pas de 250 m (81 x 81 points)
+   GRIDCART  GRILLE  STA
+                     XYINC  566601.2  81  250.  5443845.2  81  250.
+   GRIDCART  GRILLE  END
+** Stations ATMO Grand Est (métadonnées AEE / LCSQA, EPSG:4979 -> UTM 31N)
+** FR14012 Jean d'Aulan (fond urbain), FR14011 Doumer (trafic), FR14010 Bétheny (fond périurbain)
+   DISCCART  574309.9  5452877.0
+   DISCCART  574452.6  5455832.7
+   DISCCART  576445.0  5459361.1
+RE FINISHED
+
+OU STARTING
+   RECEPTOR  recepteurs.rou
+   SOURCLOC  sources.rou
+OU FINISHED
+
+ Exiting NEDCHK
+  
+ Finished Reading Input NED Data
+  
+ Exiting CHKADJ
+ Exiting DOMCNV
+ Exiting RECCNV
+ Exiting SRCCNV
+ Exiting CHKEXT
+ Exiting DEMREC
+ Exiting DEMSRC
+ *** AERMAP - VERSION 24142 ***    ***  O-I Reims - recepteurs 20 x 20 km et stations ATMO                  ***        11/22/26
+                                   ***                                                                      ***        03:50:11
+
+
+  *** Message Summary For AERMAP Setup ***
+
+ --------- Summary of Total Messages --------
+  
+ A Total of          0 Fatal Error Message(s)
+ A Total of          2 Warning Message(s)
+ A Total of          0 Informational Message(s)
+  
+  
+    ******** FATAL ERROR MESSAGES ******** 
+               ***  NONE  ***         
+  
+  
+    ********   WARNING MESSAGES   ******** 
+ OU W450      35 NEDCHK:Parameter not found in TIFF file.  TiffTag:                 274
+ OU W470      35 NEDCHK:Unexpected datum for NED file encountered:                WGS84
+
+ ***********************************
+ *** SETUP Finishes Successfully ***
+ ***********************************
+
+ *** AERMAP - VERSION 24142 ***    ***  O-I Reims - recepteurs 20 x 20 km et stations ATMO                  ***        11/22/26
+                                   ***                                                                      ***        03:50:11
+
+
+                                            ***     AERMAP SETUP OPTIONS SUMMARY       ***
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+  
+ **This Run Includes:       1  NED File(s)
+  
+ **This Run Includes:    6564  Receptor(s); and        2  Source(s)
+  
+ **The Input Receptors and Sources Were Assigned a NADA Value of  0:  No NAD Shifts Included in Calculations
+
+ **The Input Receptors and Sources Are Offset:        0.00 meters East;         0.00 meters North
+      from the User-specified Anchor Point at:   576601.20 meters East;   5453845.20 meters North;  Zone  31
+  
+ **Terrain heights were EXTRACTed from NED data
+  
+ **The Following Debug Output Files Have Been Automatically Generated:
+
+   DOMDETAIL.OUT - Details of User-specified Domain and Relation to NED Files
+   MAPDETAIL.OUT - Details Regarding Input NED Files
+   MAPPARAMS.OUT - Summary of NED File Parameters and NED File Adjacency
+ *** AERMAP - VERSION 24142 ***    ***  O-I Reims - recepteurs 20 x 20 km et stations ATMO                  ***        11/22/26
+                                   ***                                                                      ***        03:50:11
+
+ *** Message Summary For AERMAP Execution ***
+
+ --------- Summary of Total Messages --------
+  
+ A Total of          0 Fatal Error Message(s)
+ A Total of          2 Warning Message(s)
+ A Total of          0 Informational Message(s)
+  
+  
+    ******** FATAL ERROR MESSAGES ******** 
+               ***  NONE  ***         
+  
+  
+    ********   WARNING MESSAGES   ******** 
+ OU W450      35 NEDCHK:Parameter not found in TIFF file.  TiffTag:                 274
+ OU W470      35 NEDCHK:Unexpected datum for NED file encountered:                WGS84
+
+    ************************************
+    *** AERMAP Finishes Successfully ***
+    ************************************
+

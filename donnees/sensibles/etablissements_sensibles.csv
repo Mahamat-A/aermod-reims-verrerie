@@ -1,0 +1,174 @@
+id,type,nom,x,y,distance_m
+S001,maison de retraite,Résidence Orpea Saint-André,575864.3,5456826.1,3071
+S002,hôpital,Polyclinique les Bleuets,573997.5,5455760.4,3232
+S003,hôpital,Polyclinique de Courlancy,574039.5,5455080.5,2844
+S004,maison de retraite,Résidence Bords de Vesle,576517.2,5453030.0,820
+S005,hôpital,Institut Jean Godinot,574448.4,5453198.0,2248
+S006,hôpital,American Memorial Hospital,574027.8,5453526.6,2593
+S007,hôpital,Hôpital Robert Debré,574221.2,5453281.6,2446
+S008,hôpital,C.H.U. Maison Blanche,574137.2,5453525.2,2485
+S009,école,École Primaire Prieur de la Marne,576399.4,5457370.4,3531
+S010,école,École Maternelle Pommery,576522.3,5455660.0,1817
+S011,école,École Élémentaire Publique Général Carre,576926.8,5456377.9,2554
+S012,lycée,Lycée Jean XXIII,575404.1,5456801.5,3189
+S013,école,École Maternelle Dauphinot,576982.8,5457054.5,3232
+S014,école,École Primaire Carteret,576246.9,5456746.4,2923
+S015,école,École Primaire Adriatique,577488.0,5455663.4,2023
+S016,lycée,Lycée Jean Jaurès,576046.1,5456704.7,2913
+S017,école,École Maternelle Gerbault,576502.8,5456453.2,2610
+S018,école,École Élémentaire Jard-Guillaume de Machault,575294.5,5455782.1,2336
+S019,collège,Ensemble Scolaire Notre-Dame,575542.1,5455998.2,2399
+S020,collège,Collège Robert Schuman,577046.9,5456119.7,2318
+S021,école,École Élémentaire Notre-Dame,575234.4,5455852.8,2429
+S022,lycée,Lycée Saint-Jean-Baptiste de la Salle,575472.7,5455840.0,2292
+S023,école,École Primaire Gerbault,576506.1,5456582.1,2739
+S024,école,École Primaire Voltaire,575526.6,5456228.7,2615
+S025,collège,Collège Université,575421.4,5455931.7,2397
+S026,lycée,Lycée Raymond Kopa,576973.1,5455780.2,1970
+S027,lycée,Lycée Professionnel Europe,577599.7,5455651.8,2064
+S028,lycée,Lycée Clemenceau,576204.7,5455825.7,2020
+S029,école,École Primaire la Providence,576568.3,5456962.5,3118
+S030,école,École Primaire Danube,577497.4,5456302.9,2616
+S031,école,École Primaire Thillois,574617.2,5456136.7,3031
+S032,école,École Maternelle Édith Pouply,574650.3,5456220.8,3074
+S033,lycée,Lycée Technique Libergier,574780.6,5455857.4,2714
+S034,lycée,Lycée Franklin Roosevelt,574667.3,5457219.4,3889
+S035,école,École Primaire Louvois,575105.4,5454553.6,1655
+S036,école,École Primaire Barthou,575117.7,5454107.6,1507
+S037,école,École Primaire Ruisselet,575547.3,5455240.7,1749
+S038,école,École Primaire Tournebonneau,575635.1,5454802.6,1360
+S039,école,École Maternelle Jules Ferry,576259.3,5454101.1,427
+S040,école,École Primaire Saint-Joseph,575348.5,5455502.0,2077
+S041,collège,Collège Saint-Rémi,575401.0,5455059.8,1708
+S042,école,École Maternelle Yser,577094.3,5455517.9,1744
+S043,école,École Maternelle Clovis Chézel,575214.9,5454576.5,1567
+S044,école,École Primaire Sculpteurs Jacques,573453.8,5455175.8,3417
+S045,collège,Collège François Legros,573618.8,5454284.5,3015
+S046,école,École Maternelle Martin Peller,574021.6,5455355.0,2989
+S047,école,École Primaire Saint-Louis,574542.0,5454046.6,2069
+S048,lycée,Lycée Marc Chagall,574776.7,5454948.1,2132
+S049,école,École Maternelle Avranches,574028.0,5454276.6,2609
+S050,école,École Maternelle d. Billard-F. Legros,573331.4,5454344.8,3308
+S051,école,École Primaire Saint-Michel,573823.3,5455263.7,3119
+S052,école,École Primaire Sacré-Cœur,574661.8,5454637.9,2095
+S053,collège,Collège Saint-Michel,573780.3,5455285.6,3167
+S054,école,École Maternelle Gilberte Droit,573460.6,5454460.3,3200
+S055,école,École Primaire Saint-Exupéry,576634.1,5452682.0,1164
+S056,école,École Élémentaire Turenne,575014.2,5452563.0,2040
+S057,collège,Collège Paul Fort,575896.9,5453245.0,925
+S058,école,École Maternelle Cook-Vasco de Gama,575201.9,5453332.7,1490
+S059,école,École Primaire Croix Bonhomme,575867.2,5452624.3,1425
+S060,école,École Primaire Mougne Tixier,575728.9,5453023.4,1198
+S061,école,École Maternelle la Pérouse,575539.2,5452620.1,1621
+S062,école,École Maternelle Turenne,575023.7,5452525.1,2057
+S063,école,École Primaire de l'Hippodrome,573239.5,5453897.3,3362
+S064,école,École Maternelle Joliot-Curie,573036.5,5453502.6,3581
+S065,lycée,Lycée Georges Brière,574740.1,5452861.0,2105
+S066,lycée,Lycée Professionnel Joliot-Curie,573134.4,5453723.4,3469
+S067,école,École Maternelle Galilée,573438.9,5453122.1,3244
+S068,école,École Maternelle Docteur Roux,574624.7,5453830.7,1977
+S069,école,École Maternelle Auvergnats,573523.1,5453651.6,3084
+S070,collège,Collège Georges Braque,574057.7,5452764.4,2764
+S071,école,École Élémentaire Jean d'Aulan,574318.5,5452866.8,2484
+S072,école,École Élémentaire Blanche Cavarrot,573846.8,5452931.2,2902
+S073,école,École Maternelle Provençaux-Schuman,573426.8,5453707.3,3177
+S074,école,École Primaire Maison Blanche,573905.5,5453684.0,2701
+S075,lycée,Lycée François Arago,573377.1,5453374.9,3258
+S076,école,École Maternelle Mairie,579621.7,5451769.4,3665
+S077,école,École Élémentaire Émile Bruyant,579511.4,5451589.5,3682
+S078,collège,Collège Pierre de Coubertin,575430.1,5452275.7,1958
+S079,école,École Primaire Sully,574629.0,5451351.6,3179
+S080,école,École Primaire Mazarin,574721.5,5451783.8,2790
+S081,lycée,Lycée Sacré-Cœur,574659.4,5454523.3,2057
+S082,école,École Maternelle Saint-Pierre,575180.6,5455861.2,2466
+S083,lycée,Lycée Saint-Joseph,575393.9,5455392.1,1962
+S084,hôpital,Clinique de Champagne,575437.4,5456119.7,2555
+S085,école,École Primaire Sainte-Madeleine,574586.7,5455871.2,2857
+S086,école,École Maternelle Enelle,575842.7,5452600.3,1458
+S087,école,École Primaire Jamin,576041.4,5457335.3,3535
+S088,école,École Maternelle Jamin,575925.5,5457126.4,3350
+S089,collège,Collège Joliot-Curie,573236.6,5453721.8,3367
+S090,école,École Primaire Docteur Billard,573408.1,5454348.4,3233
+S091,école,École Primaire Provençaux-Schuman,573386.0,5453738.2,3217
+S092,école,École Maternelle Sully,574621.4,5451458.3,3101
+S093,école,École Primaire Avranches,574000.6,5454310.8,2642
+S094,école,École Primaire Martin Peller,574053.7,5455391.1,2980
+S095,école,École Maternelle Jean d'Aulan,574384.3,5452853.2,2429
+S096,école,École Primaire Docteur Roux,574731.0,5453798.0,1871
+S097,collège,Collège Sacré-Cœur,574554.4,5454545.4,2163
+S098,école,École Maternelle Barthou,575056.5,5454021.4,1555
+S099,école,École Primaire Saint-André,576057.7,5456963.7,3166
+S100,collège,Collège Rogelet,576081.1,5457021.3,3218
+S101,école,École Maternelle Carteret,576228.5,5456786.4,2965
+S102,école,École Primaire Pommery,576524.7,5455759.4,1916
+S103,école,École Maternelle Général Carre,576938.6,5456416.6,2593
+S104,école,École Maternelle Adriatique,577494.3,5455623.7,1990
+S105,école,École Maternelle Blanche Cavarrot,573875.8,5452988.2,2857
+S106,école,École Maternelle Raoul Dufy,573888.7,5452915.5,2867
+S107,collège,Collège Saint-Joseph,575307.9,5455477.2,2082
+S108,école,École Primaire Cavelier de la Salle,575492.9,5452610.7,1659
+S109,école,École Maternelle Mougne Tixier,575765.6,5452918.6,1248
+S110,école,École Maternelle de l'Hippodrome,573192.5,5453890.6,3409
+S111,école,École Maternelle Maison Blanche,573887.7,5453645.0,2721
+S112,école,École Primaire Amundsen-Vasco de Gama,575160.0,5453286.8,1546
+S113,école,École Primaire Jules Ferry,576234.5,5454123.1,460
+S114,école,École Primaire Joliot-Curie,572992.4,5453456.8,3630
+S115,école,École Élémentaire Galilée,573417.6,5453058.0,3279
+S116,école,École Primaire Gilberte Droit,573503.9,5454507.6,3167
+S117,lycée,Lycée Saint-Michel,573801.8,5455349.4,3178
+S118,lycée,Section Enseignement Professionnel Saint-Michel,573775.5,5455336.5,3195
+S119,école,École Maternelle Mazarin,574694.8,5451810.0,2789
+S120,école,École Maternelle Jard,575293.8,5455751.3,2311
+S121,école,École Maternelle Voltaire,575507.0,5456208.9,2605
+S122,école,École Maternelle Ruisselet,575581.0,5455263.4,1747
+S123,école,École Maternelle Tournebonneau,575687.0,5454809.0,1328
+S124,école,École Maternelle Saint-Exupéry,576641.7,5452608.0,1238
+S125,école,École Maternelle Danube,577422.1,5456317.1,2605
+S126,maison de retraite,Résidence Marguerite Rousselet,576230.2,5457423.9,3598
+S127,maison de retraite,EHPAD Korian Place Royale,575343.6,5456403.4,2851
+S128,maison de retraite,Résidence Wilson,574350.0,5454765.1,2432
+S129,maison de retraite,Maison de Retraite Roederer Boisseau,574473.4,5454869.5,2362
+S130,maison de retraite,Villa les Rèmes,577356.2,5456094.4,2373
+S131,maison de retraite,Résidence Jeanne d'Arc,576563.5,5455831.1,1986
+S132,maison de retraite,Résidence Nicolas Roland,575657.4,5455647.4,2034
+S133,hôpital,Clinique Médico-Psychologique Epsm Marne,574601.6,5453380.2,2053
+S134,maison de retraite,Maison de Retraite Tiers Temps,574925.6,5455804.6,2578
+S135,maison de retraite,Résidence Roux,574520.6,5453625.9,2092
+S136,hôpital,Hôpital de Jour - Epsm Marne,575316.6,5456022.7,2528
+S137,hôpital,Résidence Médicale Jean d'Orbais,577121.8,5456120.7,2334
+S138,accueil handicap,Institut Médico-Éducatif la Sitelle,574746.5,5451112.4,3303
+S139,maison de retraite,Résidence Saint-Martin,576160.4,5457603.9,3784
+S140,accueil handicap,Institut Médico-Éducatif l'Éveil,575144.7,5451735.0,2564
+S141,accueil handicap,ESAT Épi,575264.8,5451703.1,2525
+S142,accueil handicap,Centre Médico-Psychologique Cattp Van Gogh,574247.2,5457060.9,3985
+S143,hôpital,Délégation Départementale de la Croix-Rouge Française,576025.6,5456314.2,2535
+S144,hôpital,U.S.L.D. Sébastopol,576252.1,5457467.9,3639
+S145,maison de retraite,Résidence des Capucins,575253.0,5455329.9,2006
+S146,accueil handicap,Institut Médico-Éducatif l'Éoline,574654.2,5451112.5,3355
+S147,école,École Maternelle Prieur de la Marne,576363.9,5457307.2,3470
+S148,école,École Maternelle la Providence,576590.2,5456943.7,3098
+S149,école,École Élémentaire Ravel-Franchet,574302.3,5454381.3,2361
+S150,collège,Collège Maîtrise de la Cathédrale,575208.1,5455837.4,2431
+S151,hôpital,Foyer d'Accueil Médicalisé Jean Thibierge,574332.2,5452025.1,2909
+S152,hôpital,Foyer d'Accueil Médicalisé la Seve et le Rameau,574408.8,5454348.0,2249
+S153,maison de retraite,Foyer d'Accueil Médicalisé,576617.5,5452742.6,1103
+S154,hôpital,Foyer d'Accueil Médicalisé Aurore,577524.4,5456234.3,2561
+S155,maison de retraite,EHPAD les Parentèles,577321.2,5456807.2,3048
+S156,hôpital,Clinique Terre de France,575245.8,5451845.8,2416
+S157,école,École Internationale Henri Farman,578352.6,5455039.2,2120
+S158,hôpital,Centre Médico-Psychologique - Cattp Antonin Artaud - Epsdm,574866.9,5456434.8,3117
+S159,école,École Maternelle Sculpteurs Jacques,573426.1,5455138.9,3428
+S160,accueil handicap,Institut d'Éducation Sensorielle Michel Fandre,573644.0,5454760.9,3096
+S161,accueil handicap,Institut Thérapeutique Éducatif Pédagogique Anaïs-Reims,574456.6,5451757.2,2993
+S162,école,École Maternelle Ravel-Franchet,574262.4,5454388.0,2401
+S163,accueil handicap,Centre de Rééducation Motrice du Val de Murigny,575289.1,5452518.8,1866
+S164,hôpital,,575446.0,5452142.6,2058
+S165,accueil handicap,ITEP le Resac Yvon Moranda,575633.5,5453189.9,1169
+S166,école,École Élémentaire Dauphinot,576930.1,5457054.4,3226
+S167,hôpital,Polyclinique Reims-Bezannes,572975.4,5452217.7,3974
+S168,collège,École Secondaire Privée Henri Farman,578320.5,5455038.1,2093
+S169,hôpital,Centre Clairmarais-Établissement Public de Santé Mentale de la Marne,574260.0,5457046.4,3966
+S170,école,École Élémentaire Voltaire-Université,575555.4,5455943.2,2344
+S171,lycée,Ecole Silvya Terrade,574214.8,5456882.0,3862
+S172,maison de retraite,EHPAD le Sourire Champenois,572871.1,5452648.7,3917
+S173,hôpital,Hopital Sebastopol Chu Reims,576292.6,5457431.8,3600

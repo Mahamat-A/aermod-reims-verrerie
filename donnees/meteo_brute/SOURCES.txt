@@ -1,0 +1,24 @@
+070720-99999-2024.gz        NOAA ISD, Reims-Prunay 2024 (SYNOP + METAR), https://www.ncei.noaa.gov/pub/data/noaa/2024/
+FRM00007145-data.txt.zip    NOAA IGRA2, radiosondages Trappes (toute la période), https://www.ncei.noaa.gov/data/integrated-global-radiosonde-archive/access/data-por/
+H_51_2020-2024.csv.gz       Météo-France, données climatologiques de base horaires, département 51 (Reims-Prunay = NUM_POSTE 51449002),
+                            https://meteofrance.s3.sbg.io.cloud.ovh.net/data/synchro_ftp/BASE/HOR/H_51_previous-2020-2024.csv.gz (téléchargé le 22/11/2026)
+GMM00010618-data.txt.zip    NOAA IGRA2, radiosondages Idar-Oberstein (station de secours)
+Relief : IGN Géoplateforme WMS-R, ELEVATION.ELEVATIONGRIDCOVERAGE.HIGHRES (RGE ALTI), carré 30 km, 25 m → donnees/relief/mnt_ign_25m_utm31n.tif (scripts/prepare_mnt.py)
+Stations ATMO : métadonnées AEE https://discomap.eea.europa.eu/map/fme/metadata/PanEuropean_metadata.csv (FR14010, FR14011, FR14012)
+ERA5 (forçage WRF, étape 8) : archive NSF NCAR, jeu d633000 (ERA5 0,25°, netCDF), via le service de découpage THREDDS
+                            https://thredds.rda.ucar.edu/thredds/ncss/grid/files/d633000/... (sans compte, sans file d'attente)
+                            zone 43–55° N, 5° O–13° E, toutes les 3 h, 28/12/2023–01/02/2024 et 28/06–01/08/2024
+                            → wrf/era5_ncar/ (scripts/telecharge_era5_ncar.py, 22/11/2026). Le CDS Copernicus a été abandonné
+                            ce jour-là : file ERA5 saturée (100 requêtes en cours, ≈ 2 800 en attente, aucune avance en 3 h).
+                            Conversion au format intermédiaire WPS : ~/AERMOD/outils/era5_to_int_zone.py, copie adaptée de
+                            NCAR era5_to_int (Apache 2.0, https://github.com/NCAR/era5_to_int) pour des fichiers découpés
+                            (grille lue dans le fichier, dates recalculées depuis « time », PSFC et SOILHGT sur la grille 0,25°).
+                            Contrôle 29/12/2023 00–06 UTC, maille d03 de Prunay contre Météo-France 51449002 :
+                            T 8,7/8,8/9,6 °C contre 8,9/9,7/10,1 ; vent 6,3–6,5 contre 5,8–6,9 m/s ; PMER à moins de 0,7 hPa.
+PPA de Reims : compte rendu et présentation du comité local de l'air du 10/12/2020 (DREAL Grand Est,
+                            https://www.grand-est.developpement-durable.gouv.fr/IMG/pdf/20201210_cr_cla_ppa-reims-vf.pdf et
+                            .../presentation_cla_reims_2020.pdf) → donnees/ppa_reims/ ; étude « multicouche » ATMO (−100 % industrie : NO₂ −2 µg/m³ max).
+NO₂ horaire validé 2013–2025, stations FR14010/11/12 (+ FR14004, FR14013 fermées) : AEE, Air Quality Download Service
+                            (e-reporting E1a, fichiers SPO-FR140xx_8.parquet), heures en UTC+1 → donnees/eea_no2/ (23/11/2026).
+Émissions IREP 2013–2025 (Géorisques, https://files.georisques.fr/irep/AAAA.zip) → donnees/irep/ ; O-I = identifiant 0005701475.
+Météo-France horaire 2010–2019 et 2025–2026 (H_51_2010-2019.csv.gz, H_51_latest-2025-2026.csv.gz), même source que ci-dessus.

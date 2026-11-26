@@ -1,0 +1,13 @@
+** AERMAP - VERSION 24142                                              11/22/26
+**                                                                     14:59:44
+**  O-I Reims - etablissements sensibles (BD TOPO)
+** 
+** A total of      1  NED files were used
+** A total of      2  sources were processed
+** DOMAINXY  561999  5439244  31  591202  5468446  31
+** ANCHORXY  576601.2  5453845.2  576601.2  5453845.2  31  0
+** TERRHGTS  EXTRACT
+  
+SO ELEVUNIT METERS
+SO LOCATION  CHEM1         POINT        576601.20    5453845.20         86.17
+SO LOCATION  CHEM1B        POINT        576566.20    5453873.10         86.47

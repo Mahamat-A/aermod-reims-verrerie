@@ -1,0 +1,7 @@
+Base PostgreSQL + PostGIS « oi_reims » (PostgreSQL 16, PostGIS 3.4), créée le 22/11/2026.
+Tables : batiments (BD TOPO, 1 081 polygones, index GIST), stations (3 stations ATMO, géométrie UTM 31N), mesures (NO, NO2, NOx, O3 horaires 2024,
+valeurs validées uniquement), meteo (Reims-Prunay, AERMET), modele (contribution AERMOD aux stations,
+cas rural et urbain). Heures en UTC, début d'heure.
+Reconstruire : psql oi_reims -f schema.sql (après la table stations), puis
+  python scripts/exporte_pour_base.py et les \copy (voir l'historique dans ce dossier).
+Requêtes : requetes/*.sql — exécuter avec  psql oi_reims -P pager=off -f requetes/<fichier>.sql

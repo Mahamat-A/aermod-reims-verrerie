@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+# sorties lourdes ou régénérables
+*.out
+*.pst
+!aermap/aermap.out
+!aermod/reference_bati/horaire_stations.pst
+!aermod/reference_urbaine/horaire_stations.pst
+wrf/run_*/wrfout_*
+wrf/era5_ncar/
+wrf/met_em_*/
+donnees/meteo_brute/*.gz
+donnees/irep/
+donnees/landsat/
+donnees/aster/

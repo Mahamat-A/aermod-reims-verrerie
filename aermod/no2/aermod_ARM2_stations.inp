@@ -1,0 +1,41 @@
+** AERMOD, cas de référence : NOx (en équivalent NO2) de la verrerie O-I, Reims, année 2024
+** Source : donnees/installation.md ; météo : aermet/ ; récepteurs : aermap/
+CO STARTING
+   TITLEONE  O-I Reims - NOx 2024 - NO2 ARM2 + batiments (stations)
+   MODELOPT  DFAULT  CONC  ARM2
+   AVERTIME  1  ANNUAL
+   POLLUTID  NO2
+   RUNORNOT  RUN
+   ERRORFIL  erreurs_ARM2_stations.out
+CO FINISHED
+
+SO STARTING
+** Cheminée A ; altitude de base calculée par AERMAP
+   LOCATION  CHEM1  POINT  576601.2  5453845.2  86.17
+** Qs (g/s)  Hs (m)  Ts (K)  Vs (m/s)  Ds (m)
+   SRCPARAM  CHEM1  6.0384  59.0  523.0  8.0  2.51
+** 2 fours jusqu'au 11/07, four 2 seul ensuite (juillet pondéré)
+   EMISFACT  CHEM1  MONTH  1.0 1.0 1.0 1.0 1.0 1.0 0.65726 0.46875 0.46875 0.46875 0.46875 0.46875
+** Sillage des bâtiments (BPIPPRM, BD TOPO IGN), cf. ../batiments/bpip.out
+   INCLUDED  sillage_chem1.txt
+   SRCGROUP  ALL
+SO FINISHED
+
+RE STARTING
+   INCLUDED  stations.rou
+RE FINISHED
+
+ME STARTING
+   SURFFILE  ../../aermet/prunay_2024.sfc
+   PROFFILE  ../../aermet/prunay_2024.pfl
+   SURFDATA  07072  2024  REIMS-PRUNAY
+   UAIRDATA  00007145  2024  TRAPPES
+** Altitude du sol à la station météo (Prunay)
+   PROFBASE  96.0  METERS
+ME FINISHED
+
+OU STARTING
+   RECTABLE  ALLAVE  FIRST-SECOND
+   PLOTFILE  ANNUAL  ALL  ARM2_annuel_stations.plt
+   POSTFILE  1  ALL  PLOT  ARM2_horaire_stations.pst
+OU FINISHED

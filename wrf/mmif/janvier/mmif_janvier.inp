@@ -1,0 +1,66 @@
+; MMIF 4.1.1 : WRF (domaine d03, 1 km) -> AERMOD, maille de la cheminée O-I, janvier 2024
+; Heures en heure locale standard (UTC+1), convention « heure de fin » comme AERMET/AERMOD.
+start      2024 01 01 01
+stop       2024 02 01 00
+TimeZone   1
+
+; Nébulosité : fraction nuageuse calculée par WRF
+CLOUDCOVER WRF
+
+; Mode AERMET (recommandé par le guide EPA MMIF) : MMIF fournit un « site » prognostique,
+; AERMET (pathway PROG, version >= 21112) recalcule u*, L et les hauteurs de mélange.
+aer_mixht     AERMET
+aer_min_mixht 1.0
+aer_min_obuk  1.0
+aer_min_speed 0.0
+aer_use_NEW   T
+
+; Maille de la cheminée A (49.2326 N, 4.0522 E), UTC+1
+POINT  LL  49.2326  4.0522  1
+AER_layers  1  4
+Output aermet  useful  oi_janvier.useful.txt
+Output aermet  onsite  oi_janvier.dat
+Output aermet  BAT     oi_janvier.bat
+Output aermet  aersfc  oi_janvier.aersfc.dat
+
+; Mode AERMOD direct (sans AERMET), pour comparaison
+POINT  LL  49.2326  4.0522  1
+AER_layers  0  0
+Output aermod  useful  oi_janvier_direct.info.txt
+Output aermod  sfc     oi_janvier_direct.sfc
+Output aermod  PFL     oi_janvier_direct.pfl
+
+; Fichiers WRF du domaine d03 (ajoutés par le script une fois WRF terminé)
+INPUT ../../run_janvier/wrfout_d03_2023-12-31_00:00:00
+INPUT ../../run_janvier/wrfout_d03_2024-01-01_00:00:00
+INPUT ../../run_janvier/wrfout_d03_2024-01-02_00:00:00
+INPUT ../../run_janvier/wrfout_d03_2024-01-03_00:00:00
+INPUT ../../run_janvier/wrfout_d03_2024-01-04_00:00:00
+INPUT ../../run_janvier/wrfout_d03_2024-01-05_00:00:00
+INPUT ../../run_janvier/wrfout_d03_2024-01-06_00:00:00
+INPUT ../../run_janvier/wrfout_d03_2024-01-07_00:00:00
+INPUT ../../run_janvier/wrfout_d03_2024-01-08_00:00:00
+INPUT ../../run_janvier/wrfout_d03_2024-01-09_00:00:00
+INPUT ../../run_janvier/wrfout_d03_2024-01-10_00:00:00
+INPUT ../../run_janvier/wrfout_d03_2024-01-11_00:00:00
+INPUT ../../run_janvier/wrfout_d03_2024-01-12_00:00:00
+INPUT ../../run_janvier/wrfout_d03_2024-01-13_00:00:00
+INPUT ../../run_janvier/wrfout_d03_2024-01-14_00:00:00
+INPUT ../../run_janvier/wrfout_d03_2024-01-15_00:00:00
+INPUT ../../run_janvier/wrfout_d03_2024-01-16_00:00:00
+INPUT ../../run_janvier/wrfout_d03_2024-01-17_00:00:00
+INPUT ../../run_janvier/wrfout_d03_2024-01-18_00:00:00
+INPUT ../../run_janvier/wrfout_d03_2024-01-19_00:00:00
+INPUT ../../run_janvier/wrfout_d03_2024-01-20_00:00:00
+INPUT ../../run_janvier/wrfout_d03_2024-01-21_00:00:00
+INPUT ../../run_janvier/wrfout_d03_2024-01-22_00:00:00
+INPUT ../../run_janvier/wrfout_d03_2024-01-23_00:00:00
+INPUT ../../run_janvier/wrfout_d03_2024-01-24_00:00:00
+INPUT ../../run_janvier/wrfout_d03_2024-01-25_00:00:00
+INPUT ../../run_janvier/wrfout_d03_2024-01-26_00:00:00
+INPUT ../../run_janvier/wrfout_d03_2024-01-27_00:00:00
+INPUT ../../run_janvier/wrfout_d03_2024-01-28_00:00:00
+INPUT ../../run_janvier/wrfout_d03_2024-01-29_00:00:00
+INPUT ../../run_janvier/wrfout_d03_2024-01-30_00:00:00
+INPUT ../../run_janvier/wrfout_d03_2024-01-31_00:00:00
+INPUT ../../run_janvier/wrfout_d03_2024-02-01_00:00:00

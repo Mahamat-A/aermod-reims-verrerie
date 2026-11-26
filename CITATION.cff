@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "Pour citer ce travail, merci d'utiliser les informations ci-dessous."
+title: "Dispersion des NOx de la verrerie O-I de Reims (2024) avec AERMOD"
+type: software
+authors:
+  - family-names: "Mahamat"
+    given-names: "Ali Ousmane"
+    orcid: "https://orcid.org/0009-0009-6013-2834"
+version: "1.0.0"
+license: MIT
+repository-code: "https://github.com/Mahamat-A/aermod-reims-verrerie"
+keywords:
+  - AERMOD
+  - dispersion atmosphérique
+  - NOx
+  - WRF
+  - MMIF
+  - Reims
+abstract: >-
+  Exercice personnel de modélisation de la dispersion des NOx émis par la verrerie O-I de Reims en 2024
+  avec AERMOD (météo observée et simulée par WRF à 1 km), comparé aux mesures des stations ATMO Grand Est.
+  Travail d'apprentissage, pas une expertise réglementaire.

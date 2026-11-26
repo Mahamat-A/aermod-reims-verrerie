@@ -1,0 +1,16 @@
+era5_to_int_zone.py
+  Copie modifiée de era5_to_int.py (NCAR, https://github.com/NCAR/era5_to_int, licence Apache 2.0,
+  texte dans LICENSE-Apache-2.0.txt). Adaptée aux fichiers ERA5 découpés sur une zone par le service THREDDS
+  du NCAR (jeu d633000) : grille lue dans le fichier, dates recalculées depuis « time », PSFC et SOILHGT sur la
+  grille 0,25°. Les modifications sont repérées par « MODIF REIMS ».
+
+aerscreen_linux.patch
+  Différences entre AERSCREEN.FOR (EPA, version 21112) et sa version compilable sous Linux avec gfortran :
+  descripteurs de format « \ » (Intel) remplacés par « $ », « cls » → « clear », « copy » → « cp », noms de
+  fichiers lus en minuscules (aermod.out, aermap.out, aerscreen.fil, aerscreen.plt).
+  Appliquer : patch -o AERSCREEN_linux.FOR AERSCREEN.FOR aerscreen_linux.patch
+  Compiler : gfortran -O2 -fno-range-check -std=legacy -o aerscreen AERSCREEN_linux.FOR
+  Lancer dans le dossier de calcul avec les exécutables aermod, makemet, aermap, bpipprm et des liens
+  AERMOD.EXE, MAKEMET.EXE, AERMAP.EXE, BPIPPRM.EXE (AERSCREEN vérifie ces noms), fichiers d'entrée en fins de
+  ligne Unix, et un nombre fini de réponses au clavier (AERSCREEN redemande sans fin si un fichier manque).
+  Validation : le cas test EPA « point, terrain plat, sillage » redonne les résultats de référence.

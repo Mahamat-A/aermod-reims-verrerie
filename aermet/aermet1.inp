@@ -1,0 +1,22 @@
+JOB
+  MESSAGES  aermet_st1.msg
+  REPORT    aermet_st1.rpt
+
+UPPERAIR
+  DATA      ../donnees/meteo_brute/FRM00007145-data.txt  IGRA
+  EXTRACT   trappes_2024.iqa
+  QAOUT     trappes_2024.oqa
+  XDATES    2023/12/31 TO 2025/01/01
+  LOCATION  00007145  48.7744N  2.0097E  -1  167
+** Station de secours pour les matins sans sondage à Trappes (50 des 51 jours)
+  DATA2     ../donnees/meteo_brute/GMM00010618-data.txt  IGRA
+  EXTRACT2  idar_2024.iqa
+  QAOUT2    idar_2024.oqa
+  LOCATION2 00010618  49.6927N  7.3263E  -1  376
+
+SURFACE
+    DATA      ../donnees/meteo_corrigee/070720-99999-2024_complet  ISHD
+  EXTRACT   prunay_2024.iqa
+  QAOUT     prunay_2024.oqa
+  XDATES    2023/12/31 TO 2025/01/01
+  LOCATION  07072  49.217N   4.150E   -1  96

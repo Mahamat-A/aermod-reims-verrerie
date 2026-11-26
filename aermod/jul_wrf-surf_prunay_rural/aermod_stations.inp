@@ -1,0 +1,41 @@
+** AERMOD, cas de référence : NOx (en équivalent NO2) de la verrerie O-I, Reims, année 2024
+** Source : donnees/installation.md ; météo : aermet/ ; récepteurs : aermap/
+CO STARTING
+   TITLEONE  O-I Reims - NOx juillet 2024 - meteo wrf-surf_prunay - rural (stations)
+   MODELOPT  DFAULT  CONC
+   AVERTIME  1  PERIOD
+   POLLUTID  NOX
+   RUNORNOT  RUN
+   ERRORFIL  erreurs_stations.out
+CO FINISHED
+
+SO STARTING
+** Cheminée A ; altitude de base calculée par AERMAP
+   LOCATION  CHEM1  POINT  576601.2  5453845.2  86.17
+** Qs (g/s)  Hs (m)  Ts (K)  Vs (m/s)  Ds (m)
+   SRCPARAM  CHEM1  6.0384  59.0  523.0  8.0  2.51
+** 2 fours jusqu'au 11/07, four 2 seul ensuite (juillet pondéré)
+   EMISFACT  CHEM1  MONTH  1.0 1.0 1.0 1.0 1.0 1.0 0.65726 0.46875 0.46875 0.46875 0.46875 0.46875
+** Sillage des bâtiments (BPIPPRM, BD TOPO IGN), cf. ../batiments/bpip.out
+   INCLUDED  sillage_chem1.txt
+   SRCGROUP  ALL
+SO FINISHED
+
+RE STARTING
+   INCLUDED  stations.rou
+RE FINISHED
+
+ME STARTING
+   SURFFILE  ../../wrf/mmif/juillet/variantes/surf_prunay/variante.sfc
+   PROFFILE  ../../wrf/mmif/juillet/variantes/surf_prunay/variante.pfl
+   SURFDATA  99999  2024  WRF-MMIF
+   UAIRDATA  99999  2024  WRF-MMIF
+   PROFBASE  104.7  METERS
+   STARTEND  2024 07 01 01  2024 07 31 24
+ME FINISHED
+
+OU STARTING
+   RECTABLE  ALLAVE  FIRST-SECOND
+   PLOTFILE  PERIOD  ALL  periode_stations.plt
+   POSTFILE  1  ALL  PLOT  horaire_stations.pst
+OU FINISHED

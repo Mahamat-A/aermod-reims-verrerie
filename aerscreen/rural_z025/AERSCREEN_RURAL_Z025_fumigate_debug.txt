@@ -1,0 +1,156 @@
+
+ Calculating effective plume height for: 10010101
+
+ Stack height (adjusted):    59.00 m
+ Initial plume rise:    96.68 m
+
+ Iteration: 1
+ Plume height:   107.34 m
+ Plume rise:    99.51 m
+
+ Iteration: 2
+ Plume height:   108.76 m
+ Plume rise:    99.99 m
+
+ Final plume rise
+ Iteration: 2
+ Effective Plume height:   158.99 m
+ Plume rise:    99.99 m
+
+ Calculating effective plume height for: 10011601
+
+ Stack height (adjusted):    59.00 m
+ Initial plume rise:    96.68 m
+
+ Iteration: 1
+ Plume height:   107.34 m
+ Plume rise:    99.51 m
+
+ Iteration: 2
+ Plume height:   108.76 m
+ Plume rise:    99.99 m
+
+ Final plume rise
+ Iteration: 2
+ Effective Plume height:   158.99 m
+ Plume rise:    99.99 m
+ ######################################################################################
+ INVERSION BREAK-UP FUMIGATION CALCULATIONS FOR 10010101
+
+ Stack height:   59.00 m
+ Stack height wind speed 2.5 m
+ Stack-tip downwash adjusted stack height:   59.00 m
+ Effective stack height:  158.99 m
+ Initial distance:      5.000 km
+ temporal period:  1
+ spatial sector:  1
+
+ BASE METEOROLOGICAL VARIABLES
+     H0     U*     W*  DT/DZ ZICNV ZIMCH  M-O LEN    Z0  BOWEN ALBEDO  REF WS
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  -1.71  0.073 -9.000  0.020 -999.   46.     18.5 0.250   0.45   0.19    0.50
+
+     HT  REF TA     HT
+ - - - - - - - - - - -
+   10.0   262.1    2.0
+
+ OTHER VARIABLES
+
+   UMIX       UEFF  SIG-V  SIG-W   THETA  DT/DZ_2    BV    SIG-YB  SIGZ-B
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      2.5     2.5    0.20    0.05   266.1  0.0035  0.0114    28.3    28.3
+
+ Iteration  1
+
+ Sigma-y: 0.287E+03 m
+ Sigma-z: 0.321E+02 m
+ Distance:       8.749 km
+
+ Iteration  2
+
+ Sigma-y: 0.444E+03 m
+ Sigma-z: 0.347E+02 m
+ Distance:       9.199 km
+
+ Iteration  3
+
+ Sigma-y: 0.461E+03 m
+ Sigma-z: 0.350E+02 m
+ Distance:       9.251 km
+
+ Iteration  4
+
+ Sigma-y: 0.463E+03 m
+ Sigma-z: 0.351E+02 m
+ Distance:       9.257 km
+
+ Convergence found at iteration  4
+
+ Sigma-y: 0.464E+03 m
+ Sigma-z: 0.351E+02 m
+ Concentration: 0.653E+01
+
+ NEW MAX CONCENTRATION OF 0.653E+01 AT       9.257 KM FOR DATE 10010101
+ temporal period:  1
+ spatial sector:  1
+
+ ######################################################################################
+ INVERSION BREAK-UP FUMIGATION CALCULATIONS FOR 10011601
+
+ Stack height:   59.00 m
+ Stack height wind speed 2.5 m
+ Stack-tip downwash adjusted stack height:   59.00 m
+ Effective stack height:  158.99 m
+ Initial distance:      5.000 km
+ temporal period:  1
+ spatial sector:  1
+
+ BASE METEOROLOGICAL VARIABLES
+     H0     U*     W*  DT/DZ ZICNV ZIMCH  M-O LEN    Z0  BOWEN ALBEDO  REF WS
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  -1.71  0.073 -9.000  0.020 -999.   46.     18.5 0.250   0.45   0.19    0.50
+
+     HT  REF TA     HT
+ - - - - - - - - - - -
+   10.0   262.1    2.0
+
+ OTHER VARIABLES
+
+   UMIX       UEFF  SIG-V  SIG-W   THETA  DT/DZ_2    BV    SIG-YB  SIGZ-B
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      2.5     2.5    0.20    0.05   266.1  0.0035  0.0114    28.3    28.3
+
+ Iteration  1
+
+ Sigma-y: 0.287E+03 m
+ Sigma-z: 0.321E+02 m
+ Distance:       8.749 km
+
+ Iteration  2
+
+ Sigma-y: 0.444E+03 m
+ Sigma-z: 0.347E+02 m
+ Distance:       9.199 km
+
+ Iteration  3
+
+ Sigma-y: 0.461E+03 m
+ Sigma-z: 0.350E+02 m
+ Distance:       9.251 km
+
+ Iteration  4
+
+ Sigma-y: 0.463E+03 m
+ Sigma-z: 0.351E+02 m
+ Distance:       9.257 km
+
+ Convergence found at iteration  4
+
+ Sigma-y: 0.464E+03 m
+ Sigma-z: 0.351E+02 m
+ Concentration: 0.653E+01
+
+ FINAL MAX CONCENTRATION OF 0.653E+01 AT       9.257 KM FOR DATE 10010101
+ temporal period:  1
+ spatial sector:  1
+
