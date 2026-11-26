@@ -1,5 +1,7 @@
 # Dispersion des NOx de la verrerie O-I de Reims (2024) avec AERMOD
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24559575.svg)](https://doi.org/10.5281/zenodo.24559575)
+
 Étude indépendante de la dispersion atmosphérique, fondée sur des données publiques et des hypothèses documentées.
 Ce n'est **pas une expertise réglementaire** : les résultats sont indicatifs et n'ont été ni vérifiés ni validés par
 l'exploitant ou par l'administration.
@@ -88,6 +90,7 @@ Ordre des étapes, chaque script étant documenté en tête de fichier :
 
 ## Citer
 
-Mahamat Ali Ousmane (2026). *Dispersion des NOx de la verrerie O-I de Reims (2024) avec AERMOD*. Voir `CITATION.cff`.
+Mahamat Ali Ousmane (2026). *Dispersion des NOx de la verrerie O-I de Reims (2024) avec AERMOD* (version 1.0.0).
+Zenodo. https://doi.org/10.5281/zenodo.24559575 — voir aussi `CITATION.cff`.
 
 Auteur : Mahamat Ali Ousmane — ORCID [0009-0009-6013-2834](https://orcid.org/0009-0009-6013-2834)

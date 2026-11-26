@@ -7,6 +7,8 @@ authors:
     given-names: "Ali Ousmane"
     orcid: "https://orcid.org/0009-0009-6013-2834"
 version: "1.0.0"
+doi: "10.5281/zenodo.24559575"
+date-released: "2026-11-26"
 license: MIT
 repository-code: "https://github.com/Mahamat-A/aermod-reims-verrerie"
 keywords:
