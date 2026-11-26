@@ -1,0 +1,13 @@
+# Fichiers de données des modèles (et non du code) : exclus des statistiques de langages de GitHub
+*.plt linguist-generated=true linguist-language=Text
+*.pst linguist-generated=true
+*.sfc linguist-generated=true
+*.SFC linguist-generated=true
+*.pfl linguist-generated=true
+*.PFL linguist-generated=true
+*.oqa linguist-generated=true
+*.rou linguist-generated=true
+*.inp linguist-language=Text
+*.DAT linguist-generated=true
+*.OUT linguist-generated=true
+*.IN1 linguist-language=Text
