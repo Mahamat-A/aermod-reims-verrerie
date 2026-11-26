@@ -1,6 +1,6 @@
 # Dispersion of NOx from the O-I glass plant in Reims (2024) with AERMOD
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24559575.svg)](https://doi.org/10.5281/zenodo.24559575)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24559574.svg)](https://doi.org/10.5281/zenodo.24559574)
 
 *[Version française : README.md](README.md)*
 
@@ -78,7 +78,8 @@ is given in [README.md](README.md) (section « Reproduire les calculs »); each 
 
 ## Citation
 
-Ali Ousmane Mahamat (2026). *Dispersion des NOx de la verrerie O-I de Reims (2024) avec AERMOD* (version 1.0.0).
-Zenodo. https://doi.org/10.5281/zenodo.24559575 — see also `CITATION.cff`.
+Ali Ousmane Mahamat (2026). *Dispersion des NOx de la verrerie O-I de Reims (2024) avec AERMOD* (version 1.1.0).
+Zenodo. https://doi.org/10.5281/zenodo.24561079 (all versions: https://doi.org/10.5281/zenodo.24559574) — see
+also `CITATION.cff`.
 
 Author: Ali Ousmane Mahamat — ORCID [0009-0009-6013-2834](https://orcid.org/0009-0009-6013-2834)

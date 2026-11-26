@@ -6,8 +6,12 @@ authors:
   - family-names: "Mahamat"
     given-names: "Ali Ousmane"
     orcid: "https://orcid.org/0009-0009-6013-2834"
-version: "1.0.0"
-doi: "10.5281/zenodo.24559575"
+version: "1.1.0"
+doi: "10.5281/zenodo.24561079"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.24559574"
+    description: "DOI de toutes les versions (concept)"
 date-released: "2026-11-26"
 license: MIT
 repository-code: "https://github.com/Mahamat-A/aermod-reims-verrerie"

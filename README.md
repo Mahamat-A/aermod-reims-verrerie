@@ -1,6 +1,6 @@
 # Dispersion des NOx de la verrerie O-I de Reims (2024) avec AERMOD
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24559575.svg)](https://doi.org/10.5281/zenodo.24559575)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24559574.svg)](https://doi.org/10.5281/zenodo.24559574)
 
 *[English version: README.en.md](README.en.md) — rapport en anglais : `rapport/aermod_reims_report_en.pdf`*
 
@@ -92,7 +92,8 @@ Ordre des étapes, chaque script étant documenté en tête de fichier :
 
 ## Citer
 
-Mahamat Ali Ousmane (2026). *Dispersion des NOx de la verrerie O-I de Reims (2024) avec AERMOD* (version 1.0.0).
-Zenodo. https://doi.org/10.5281/zenodo.24559575 — voir aussi `CITATION.cff`.
+Mahamat Ali Ousmane (2026). *Dispersion des NOx de la verrerie O-I de Reims (2024) avec AERMOD* (version 1.1.0).
+Zenodo. https://doi.org/10.5281/zenodo.24561079 (toutes versions : https://doi.org/10.5281/zenodo.24559574) — voir
+aussi `CITATION.cff`.
 
 Auteur : Mahamat Ali Ousmane — ORCID [0009-0009-6013-2834](https://orcid.org/0009-0009-6013-2834)
