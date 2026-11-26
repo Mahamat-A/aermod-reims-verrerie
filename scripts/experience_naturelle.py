@@ -22,10 +22,11 @@ import numpy as np
 import pandas as pd
 
 from compare_secteurs import DIRECTION_USINE, cle_aermod, X_STATIONS
+from langue import fichier, t as tr
 
 PROJET = Path(__file__).resolve().parent.parent
 CODES = {"jean_daulan": "FR14012", "doumer": "FR14011", "betheny": "FR14010"}
-NOMS = {"jean_daulan": "Jean d'Aulan (fond urbain)", "doumer": "Doumer (trafic)", "betheny": "Bétheny (périurbain)"}
+NOMS = {"jean_daulan": tr("Jean d'Aulan (fond urbain)"), "doumer": tr("Doumer (trafic)"), "betheny": tr("Bétheny (périurbain)")}
 # IREP, t/an de NOx (éq. NO₂) ; 2020 non déclarée (exclue)
 EMISSIONS = {2013: 343, 2014: 343, 2015: 450, 2016: 566, 2017: 517, 2018: 437, 2019: 275,
              2021: 361, 2022: 384, 2023: 275, 2024: 143, 2025: 250}
@@ -161,7 +162,7 @@ def figure(r, pentes):
         d = r[r.station == s]
         dc = sans_tendance(d)
         ax.errorbar(d.emission_t, dc, yerr=d.D_et, fmt="o", color="#4a4a4a", ms=5, capsize=2, lw=1,
-                    label="mesures, corrigées de la tendance (± 1 écart type)" if s == "jean_daulan" else None)
+                    label=tr("mesures, corrigées de la tendance (± 1 écart type)") if s == "jean_daulan" else None)
         for (_, l), y in zip(d.iterrows(), dc):
             ax.annotate(str(l.annee)[2:], (l.emission_t, y), xytext=(4, 3), textcoords="offset points",
                         fontsize=7, color="#777777")
@@ -170,17 +171,17 @@ def figure(r, pentes):
             nom, couleur = CAS[cas]
             centre = np.average(dc - k[s] * d.emission_t, weights=1 / d.D_et ** 2)
             ax.plot(e, centre + k[s] * e, color=couleur, lw=2,
-                    label=f"pente prévue par AERMOD, {nom} — β mesuré = {beta:.2f} ± {beta_et:.2f}"
+                    label=tr("pente prévue par AERMOD, {nom} — β mesuré = {beta:.2f} ± {beta_et:.2f}").format(nom=tr(nom), beta=beta, beta_et=beta_et)
                     if s == "jean_daulan" else None)
         ax.set_title(NOMS[s], fontsize=10)
-        ax.set_xlabel("Émissions de NOx d'O-I (t/an, IREP)")
+        ax.set_xlabel(tr("Émissions de NOx d'O-I (t/an, IREP)"))
         ax.axhline(0, color="#bbbbbb", lw=0.8)
-    axes[0].set_ylabel("NO₂ : secteur usine − secteurs voisins (µg/m³)")
+    axes[0].set_ylabel(tr("NO₂ : secteur usine − secteurs voisins (µg/m³)"))
     fig.legend(loc="lower center", ncol=1, fontsize=8.5, frameon=False)
-    fig.suptitle("Expérience naturelle 2013–2025 : le NO₂ par vent venant de l'usine suit-il ses émissions ? "
-                 "(β = 1 : modèle juste ; β = 0 : aucun effet)", fontsize=10.5)
+    fig.suptitle(tr("Expérience naturelle 2013–2025 : le NO₂ par vent venant de l'usine suit-il ses émissions ? "
+                 "(β = 1 : modèle juste ; β = 0 : aucun effet)"), fontsize=10.5)
     fig.tight_layout(rect=(0, 0.17, 1, 1))
-    sortie = PROJET / "figures/etape6_experience_naturelle.png"
+    sortie = PROJET / "figures" / fichier("etape6_experience_naturelle.png")
     fig.savefig(sortie, dpi=150)
     return sortie
 

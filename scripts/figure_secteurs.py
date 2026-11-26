@@ -18,9 +18,10 @@ import matplotlib.pyplot as plt
 PROJET = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJET / "scripts"))
 from compare_secteurs import DIRECTION_USINE, X_STATIONS, cle_aermod, lire_meteo  # noqa: E402
+from langue import fichier, t as tr  # noqa: E402
 
-NOMS = {"jean_daulan": "Jean d'Aulan (fond urbain)", "doumer": "Doumer (trafic)",
-        "betheny": "Bétheny (fond périurbain)"}
+NOMS = {"jean_daulan": tr("Jean d'Aulan (fond urbain)"), "doumer": tr("Doumer (trafic)"),
+        "betheny": tr("Bétheny (fond périurbain)")}
 ROUGE, GRIS = "#cc3a2c", "#3a3a3a"
 
 
@@ -56,18 +57,18 @@ if __name__ == "__main__":
         axes[0, k].set_ylim(0, None)
         axes[1, k].plot(modele.index, modele.values, color=ROUGE, lw=2, marker="o", ms=3)
         axes[1, k].set_ylim(0, modele.max() * 1.18)
-        axes[1, k].text(d + 17, modele.max() * 1.1, "direction\nde l'usine", ha="left", va="top", fontsize=8, color="0.35")
-        axes[1, k].set_xlabel("Direction d'où vient le vent (°)")
+        axes[1, k].text(d + 17, modele.max() * 1.1, tr("direction\nde l'usine"), ha="left", va="top", fontsize=8, color="0.35")
+        axes[1, k].set_xlabel(tr("Direction d'où vient le vent (°)"))
         axes[1, k].set_xticks(range(0, 361, 90))
         print(f"{s:12s} secteur usine : NO2 mesuré {mesure.loc[[v for v in mesure.index if abs(((v - d + 180) % 360) - 180) <= 15]].mean():5.1f} | "
               f"modèle {modele.loc[[v for v in modele.index if abs(((v - d + 180) % 360) - 180) <= 15]].mean():.2f} µg/m³ | heures/secteur min {n.min()}")
-    axes[0, 0].set_ylabel("NO₂ mesuré (µg/m³)")
-    axes[1, 0].set_ylabel("Contribution modélisée\nde la verrerie, NO₂ (µg/m³)")
-    fig.suptitle("Reims 2024 – NO₂ moyen par secteur de vent de 10° (vent : Reims-Prunay) : "
-                 "mesures ATMO Grand Est et contribution AERMOD de la verrerie O-I", fontsize=11.5)
-    fig.text(0.01, 0.005, "Mesures : LCSQA/ATMO Grand Est, valeurs validées. Modèle : AERMOD 26135, OLM "
+    axes[0, 0].set_ylabel(tr("NO₂ mesuré (µg/m³)"))
+    axes[1, 0].set_ylabel(tr("Contribution modélisée\nde la verrerie, NO₂ (µg/m³)"))
+    fig.suptitle(tr("Reims 2024 – NO₂ moyen par secteur de vent de 10° (vent : Reims-Prunay) : "
+                 "mesures ATMO Grand Est et contribution AERMOD de la verrerie O-I"), fontsize=11.5)
+    fig.text(0.01, 0.005, tr("Mesures : LCSQA/ATMO Grand Est, valeurs validées. Modèle : AERMOD 26135, OLM "
              "(ozone mesuré, NO₂/NOx à l'émission 0,10), option urbaine, bâtiments BPIPPRM. Échelles verticales différentes "
-             "(facteur ~50).", fontsize=7.5, color="0.3")
+             "(facteur ~50)."), fontsize=7.5, color="0.3")
     fig.tight_layout(rect=(0, 0.03, 1, 0.95))
-    fig.savefig(PROJET / "figures" / "etape6_secteurs_no2.png", dpi=150)
-    print("Écrit : figures/etape6_secteurs_no2.png")
+    fig.savefig(PROJET / "figures" / fichier("etape6_secteurs_no2.png"), dpi=150)
+    print("Écrit : figures/" + fichier("etape6_secteurs_no2.png"))

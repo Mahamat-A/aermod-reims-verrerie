@@ -12,8 +12,8 @@ the authorities.
 the largest NOx emitter in the urban area (143 t in 2024, IREP register)? Can the monitoring network detect it?
 
 **Report**: [`rapport/aermod_reims_report_en.pdf`](rapport/aermod_reims_report_en.pdf) (9-page summary in English;
-French original: `rapport/rapport_aermod_reims.pdf`). Detailed step reports (`rapport/*.md`), scripts, comments and
-figure labels are in French.
+French original: `rapport/rapport_aermod_reims.pdf`). Figures exist in both languages (`figures/*_en.png`, produced
+by the same scripts with the `--en` option); detailed step reports (`rapport/*.md`) and script comments are in French.
 
 ## Main results
 

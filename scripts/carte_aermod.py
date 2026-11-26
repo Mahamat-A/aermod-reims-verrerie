@@ -15,20 +15,22 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.colors import BoundaryNorm, ListedColormap
 
+from langue import fichier as nom_figure, nombre, t
+
 PROJET = Path(__file__).resolve().parent.parent
 OPTIONS = {"urbaine": (PROJET / "aermod" / "reference_urbaine",
-                       "option urbaine (182 000 hab. ; densité ~3 000 hab/km² dans un rayon de 3 km)"),
+                       t("option urbaine (182 000 hab. ; densité ~3 000 hab/km² dans un rayon de 3 km)")),
            "rurale": (PROJET / "aermod" / "reference_bati",
-                      "option rurale (méthode d'Auer : 24 % de sols urbains dans un rayon de 3 km)")}
+                      t("option rurale (méthode d'Auer : 24 % de sols urbains dans un rayon de 3 km)"))}
 FOND = PROJET / "donnees" / "relief" / "plan_ign_20km.png"
 ETENDUE_FOND = (566476.2, 586726.2, 5443720.2, 5463970.2)   # m, UTM 31N (WMS Plan IGN)
 CHEMINEE = (576601.2, 5453845.2)
-STATIONS = {"Jean d'Aulan\n(fond urbain)": (574309.9, 5452877.0),
-            "Doumer\n(trafic)": (574452.6, 5455832.7),
-            "Bétheny\n(fond périurbain)": (576445.0, 5459361.1)}
+STATIONS = {t("Jean d'Aulan\n(fond urbain)"): (574309.9, 5452877.0),
+            t("Doumer\n(trafic)"): (574452.6, 5455832.7),
+            t("Bétheny\n(fond périurbain)"): (576445.0, 5459361.1)}
 # Une seule teinte, du clair au foncé (5 classes)
 TEINTES = ["#fcd9c4", "#f7a582", "#ec6f4f", "#cc3a2c", "#8e1616"]
-CARTOUCHE = (
+CARTOUCHE = t(
     "AERMOD 26135 – météo Reims-Prunay 2024 (AERMET, radiosondages Trappes / Idar-Oberstein) – "
     "relief IGN RGE ALTI 25 m\n"
     "Source : cheminée 59 m, 523 K, 8 m/s, Ø 2,51 m ; 143 t NOx en 2024 (IREP), modulées par mois "
@@ -79,7 +81,7 @@ def carte(option, fichier, titre, classes, sortie, note_max):
     ax.contour(xs / 1000, ys / 1000, c, levels=classes, colors="#5a0f0f", linewidths=0.5, alpha=0.8)
 
     ax.plot(CHEMINEE[0] / 1000, CHEMINEE[1] / 1000, "^", ms=12, mfc="k", mec="w", mew=1.5, zorder=5)
-    ax.annotate("Verrerie O-I\n(cheminée 59 m)", (CHEMINEE[0] / 1000, CHEMINEE[1] / 1000),
+    ax.annotate(t("Verrerie O-I\n(cheminée 59 m)"), (CHEMINEE[0] / 1000, CHEMINEE[1] / 1000),
                 xytext=(10, -22), textcoords="offset points", fontsize=8.5, fontweight="bold")
     for nom, (sx, sy) in STATIONS.items():
         ax.plot(sx / 1000, sy / 1000, "o", ms=8, mfc="w", mec="k", mew=1.3, zorder=5)
@@ -87,13 +89,13 @@ def carte(option, fichier, titre, classes, sortie, note_max):
                     fontsize=8, ha="right")
     i, j = np.unravel_index(np.nanargmax(c), c.shape)
     ax.plot(xs[j] / 1000, ys[i] / 1000, "P", ms=11, mfc="w", mec="k", zorder=5)
-    ax.annotate("max. " + note_max.format(c[i, j]).replace(".", ","), (xs[j] / 1000, ys[i] / 1000),
+    ax.annotate("max. " + nombre(note_max.format(c[i, j])), (xs[j] / 1000, ys[i] / 1000),
                 xytext=(8, 8), textcoords="offset points", fontsize=8.5,
                 bbox=dict(fc="w", ec="0.6", lw=0.5, pad=1.5))
 
     poignees = [plt.Rectangle((0, 0), 1, 1, fc=t, alpha=0.72, ec="#5a0f0f", lw=0.5) for t in TEINTES]
     bornes = classes + [None]
-    fr = lambda v: f"{v:g}".replace(".", ",")
+    fr = lambda v: nombre(f"{v:g}")
     etiquettes = [f"{fr(bornes[k])} – {fr(bornes[k + 1])}" if bornes[k + 1] else f"≥ {fr(bornes[k])}"
                   for k in range(len(classes))]
     ax.legend(poignees, etiquettes, title="µg/m³", loc="lower right", fontsize=8.5,
@@ -107,9 +109,9 @@ def carte(option, fichier, titre, classes, sortie, note_max):
     ax.set_title(titre, fontsize=12, loc="left")
     fig.text(0.02, 0.012, CARTOUCHE.format(option=texte_option), fontsize=7, color="0.25", va="bottom")
     fig.tight_layout(rect=(0, 0.075, 1, 1))
-    fig.savefig(PROJET / "figures" / sortie, dpi=170)
+    fig.savefig(PROJET / "figures" / nom_figure(sortie), dpi=170)
     plt.close(fig)
-    print(f"Écrit : figures/{sortie}")
+    print(f"Écrit : figures/{nom_figure(sortie)}")
 
 
 if __name__ == "__main__":
@@ -117,8 +119,8 @@ if __name__ == "__main__":
     classes_horaires = {"urbaine": [4, 6, 8, 10, 12], "rurale": [10, 15, 20, 30, 40]}
     for option, prefixe in [("urbaine", "aermod_reference_2024"), ("rurale", "aermod_rural_2024")]:
         carte(option, "annuel_grille.plt",
-              f"NOx (éq. NO₂) – contribution de la verrerie O-I – moyenne annuelle 2024 – option {option}",
+              t("NOx (éq. NO₂) – contribution de la verrerie O-I – moyenne annuelle 2024 – option {option}").format(option=t(option)),
               [0.05, 0.075, 0.1, 0.15, 0.2], f"{prefixe}_annuel.png", "{:.2f} µg/m³")
         carte(option, "max1h_grille.plt",
-              f"NOx (éq. NO₂) – contribution de la verrerie O-I – maximum horaire 2024 – option {option}",
+              t("NOx (éq. NO₂) – contribution de la verrerie O-I – maximum horaire 2024 – option {option}").format(option=t(option)),
               classes_horaires[option], f"{prefixe}_max1h.png", "{:.0f} µg/m³")

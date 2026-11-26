@@ -14,15 +14,16 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 from carte_aermod import CHEMINEE, ETENDUE_FOND, PROJET, STATIONS, TEINTES, fond_gris, lire_plot, nord_et_echelle
+from langue import fichier as nom_figure, nombre, t
 
-CAS = {"prunay_rural": "Prunay (référence), option rurale",
-       "prunay_urbain": "Prunay, option urbaine",
-       "wrf-z025_rural": "WRF 1 km, z0 0,25 m, option rurale",
-       "wrf-z025_urbain": "WRF 1 km, z0 0,25 m, option urbaine"}
+CAS = {"prunay_rural": t("Prunay (référence), option rurale"),
+       "prunay_urbain": t("Prunay, option urbaine"),
+       "wrf-z025_rural": t("WRF 1 km, z0 0,25 m, option rurale"),
+       "wrf-z025_urbain": t("WRF 1 km, z0 0,25 m, option urbaine")}
 # Par mois : nom, z0 de Prunay, Bowen des variantes WRF, phrase sur les émissions, puis les classes de chaque carte
 # (première classe ≈ le quart du maximum, arrondie)
 MOIS = {
-    "jan": dict(nom="janvier", z0="0,03 m en hiver", bowen="0,45", emis="",
+    "jan": dict(nom=t("janvier"), z0=t("0,03 m en hiver"), bowen=t("0,45"), emis="",
                 moyenne={"prunay_rural": [0.05, 0.075, 0.1, 0.15, 0.2],      # max 0,25
                          "prunay_urbain": [0.1, 0.15, 0.2, 0.3, 0.4],        # 0,41
                          "wrf-z025_rural": [0.2, 0.3, 0.4, 0.6, 0.8],        # 0,87
@@ -31,21 +32,22 @@ MOIS = {
                        "prunay_urbain": [3, 4, 6, 8, 10],                    # 12,6
                        "wrf-z025_rural": [5, 8, 10, 15, 20],                 # 19,9
                        "wrf-z025_urbain": [4, 6, 8, 10, 12]}),               # 14,9
-    "jul": dict(nom="juillet", z0="0,15 m en été", bowen="0,35", emis=", four 3 arrêté le 12/07",
+    "jul": dict(nom=t("juillet"), z0=t("0,15 m en été"), bowen=t("0,35"), emis=t(", four 3 arrêté le 12/07"),
                 moyenne=dict.fromkeys(CAS, [0.1, 0.15, 0.2, 0.3, 0.4]),     # 0,39–0,65 : même ordre
                 max1h={"prunay_rural": [5, 8, 10, 15, 20],                   # 21,8
                        "prunay_urbain": [2, 3, 4, 5, 6],                     # 7,5
                        "wrf-z025_rural": [2, 3, 4, 6, 8],                    # 9,2
                        "wrf-z025_urbain": [2.5, 4, 6, 8, 10]}),              # 10,6
 }
-CARTOUCHE = (
+CARTOUCHE = t(
     "AERMOD 26135, {nom} 2024 (744 h). Prunay : AERMET avec la surface autour du mât (z0 {z0}). "
     "WRF 4.7.1 (ERA5, 9/3/1 km) → MMIF 4.1.1 → AERMET, maille de la cheminée,\n"
     "z0 0,25 m estimé dans 1 km autour de la source, albédo 0,19, Bowen {bowen}. Cheminée 59 m, 523 K, 8 m/s, Ø 2,51 m ; "
     "NOx 2024 (IREP) modulés par mois{emis}.\nBâtiments BPIPPRM (BD TOPO), relief RGE ALTI 25 m. "
     "NO₂ ≈ 0,9 × NOx. Fond : Plan IGN (Géoplateforme)."
 )
-fr = lambda v: f"{v:g}".replace(".", ",")
+fr = lambda v: nombre(f"{v:g}")
+NOM_FICHIER = {"jan": "janvier", "jul": "juillet"}
 
 
 def panneau(ax, dossier, fichier, classes, note_max, sous_titre):
@@ -60,7 +62,7 @@ def panneau(ax, dossier, fichier, classes, note_max, sous_titre):
                     fontsize=7, ha="right")
     i, j = np.unravel_index(np.nanargmax(c), c.shape)
     ax.plot(xs[j] / 1000, ys[i] / 1000, "P", ms=9, mfc="w", mec="k", zorder=5)
-    ax.annotate("max. " + note_max.format(c[i, j]).replace(".", ","), (xs[j] / 1000, ys[i] / 1000),
+    ax.annotate("max. " + nombre(note_max.format(c[i, j])), (xs[j] / 1000, ys[i] / 1000),
                 xytext=(6, 6), textcoords="offset points", fontsize=7.5,
                 bbox=dict(fc="w", ec="0.6", lw=0.5, pad=1.2), zorder=6)
     poignees = [plt.Rectangle((0, 0), 1, 1, fc=t, alpha=0.72, ec="#5a0f0f", lw=0.5) for t in TEINTES]
@@ -87,17 +89,17 @@ def planche(mois, fichier, titre, classes, note_max, sortie):
     fig.suptitle(titre, fontsize=12.5, x=0.02, ha="left")
     fig.text(0.02, 0.01, CARTOUCHE.format(**MOIS[mois]), fontsize=7, color="0.25", va="bottom")
     fig.tight_layout(rect=(0.01, 0.075, 1, 0.98), h_pad=2.5)
-    fig.savefig(PROJET / "figures" / sortie, dpi=150)
+    fig.savefig(PROJET / "figures" / nom_figure(sortie), dpi=150)
     plt.close(fig)
-    print(f"Écrit : figures/{sortie}")
+    print(f"Écrit : figures/{nom_figure(sortie)}")
 
 
 if __name__ == "__main__":
-    mois = sys.argv[1]
+    mois = [a for a in sys.argv[1:] if not a.startswith("--")][0]
     m = MOIS[mois]
     planche(mois, "periode_grille.plt",
-            f"NOx (éq. NO₂) – contribution de la verrerie O-I – moyenne de {m['nom']} 2024",
-            m["moyenne"], "{:.2f} µg/m³", f"etape8_{m['nom']}_moyenne.png")
+            t("NOx (éq. NO₂) – contribution de la verrerie O-I – moyenne de {mois} 2024").format(mois=m["nom"]),
+            m["moyenne"], "{:.2f} µg/m³", f"etape8_{NOM_FICHIER[mois]}_moyenne.png")
     planche(mois, "max1h_grille.plt",
-            f"NOx (éq. NO₂) – contribution de la verrerie O-I – maximum horaire de {m['nom']} 2024",
-            m["max1h"], "{:.0f} µg/m³", f"etape8_{m['nom']}_max1h.png")
+            t("NOx (éq. NO₂) – contribution de la verrerie O-I – maximum horaire de {mois} 2024").format(mois=m["nom"]),
+            m["max1h"], "{:.0f} µg/m³", f"etape8_{NOM_FICHIER[mois]}_max1h.png")
